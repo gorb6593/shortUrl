@@ -40,14 +40,13 @@ public class UrlService {
         return UrlResponseDto.fromShortUrl(url);
     }
 
-    // ID를 base62로 인코딩하여 단축 URL 생성
     private String createShortUrl(String url) {
         try {
             // MD5 해시 알고리즘
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] hashBytes = md.digest(url.getBytes());
 
-            // Base64 인코딩하여 문자열로 변환
+            // Base64 인코딩하여 문자열로 변환(8자리)
             return Base64.getUrlEncoder()
                     .encodeToString(hashBytes)
                     .substring(0, 8);

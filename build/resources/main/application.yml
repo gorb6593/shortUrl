@@ -8,8 +8,14 @@ spring:
   h2:
     console:
       enabled: true
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
 
 logging:
   level:
-    root: info
-    com.laundrygo.shorturl.repository: debug
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE

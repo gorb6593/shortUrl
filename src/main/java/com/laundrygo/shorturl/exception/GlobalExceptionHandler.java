@@ -3,7 +3,6 @@ package com.laundrygo.shorturl.exception;
 import com.laundrygo.shorturl.dto.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,7 +34,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleMethodArgumentNotValid(MethodArgumentNotValidException e) {
         log.error("Validation error: {}", e.getMessage());
 
-        // 첫 번째 에러 메시지만 가져오기
         String errorMessage = e.getBindingResult()
                 .getFieldErrors()
                 .stream()

@@ -2,7 +2,6 @@ package com.laundrygo.shorturl.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
 
 @Getter
 @AllArgsConstructor

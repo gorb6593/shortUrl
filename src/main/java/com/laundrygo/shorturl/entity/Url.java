@@ -51,8 +51,4 @@ public class Url {
     public void incrementAccessCount() {
         this.accessCount++;
     }
-
-    private String encodeId(Long id) {
-        return Long.toString(id, 36);
-    }
 }
